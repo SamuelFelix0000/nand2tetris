@@ -1,0 +1,144 @@
+function Main.main 5
+    push constant 30
+    pop local 0
+    push constant 30
+    pop local 1
+    push constant 0
+    pop local 3
+label Main_0
+    push local 3
+    not
+    not
+    if-goto Main_1
+label Main_2
+    push local 2
+    push constant 0
+    eq
+    not
+    if-goto Main_3
+    call Keyboard.keyPressed 0
+    pop local 2
+    goto Main_2
+label Main_3
+    push local 2
+    push constant 81
+    eq
+    not
+    if-goto Main_5
+    push constant 1
+    neg
+    pop local 3
+    goto Main_4
+label Main_5
+label Main_4
+    push local 2
+    push constant 82
+    eq
+    not
+    if-goto Main_7
+    call Screen.clearScreen 0
+    pop temp 0
+    push constant 0
+    pop local 4
+    push constant 30
+    pop local 0
+    push constant 30
+    pop local 1
+    goto Main_6
+label Main_7
+label Main_6
+    push local 2
+    push constant 70
+    eq
+    not
+    if-goto Main_9
+    push constant 0
+    pop local 4
+    goto Main_8
+label Main_9
+label Main_8
+    push local 2
+    push constant 69
+    eq
+    not
+    if-goto Main_11
+    push constant 1
+    neg
+    pop local 4
+    goto Main_10
+label Main_11
+label Main_10
+    push local 2
+    push constant 87
+    eq
+    not
+    if-goto Main_13
+    push local 1
+    push constant 5
+    sub
+    pop local 1
+    goto Main_12
+label Main_13
+label Main_12
+    push local 2
+    push constant 83
+    eq
+    not
+    if-goto Main_15
+    push local 1
+    push constant 5
+    add
+    pop local 1
+    goto Main_14
+label Main_15
+label Main_14
+    push local 2
+    push constant 65
+    eq
+    not
+    if-goto Main_17
+    push local 0
+    push constant 5
+    sub
+    pop local 0
+    goto Main_16
+label Main_17
+label Main_16
+    push local 2
+    push constant 68
+    eq
+    not
+    if-goto Main_19
+    push local 0
+    push constant 5
+    add
+    pop local 0
+    goto Main_18
+label Main_19
+label Main_18
+label Main_20
+    push local 2
+    push constant 0
+    eq
+    not
+    not
+    if-goto Main_21
+    call Keyboard.keyPressed 0
+    pop local 2
+    push local 4
+    not
+    if-goto Main_23
+    push local 0
+    push local 1
+    push constant 5
+    call Screen.drawCircle 3
+    pop temp 0
+    goto Main_22
+label Main_23
+label Main_22
+    goto Main_20
+label Main_21
+    goto Main_0
+label Main_1
+    push constant 0
+    return

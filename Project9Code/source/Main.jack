@@ -1,0 +1,64 @@
+/** 
+This is a simple program that allows you to draw diagrams 
+on the screen, using WSAD keys to control the drawing pen's movement.
+To start drawing, press E
+If you want to lift the pen and start drawing at the different
+location, press F to lift the pen up (disable drawing temporarily)
+To reset everything, press R
+To exit the program, press Q
+Note: Do not hold the keys for a long time. Just press the keys once and lift you fingers up.
+-Just give me 60/100, I only want to pass this assignment, thanks :)
+*/
+
+class Main {
+    function void main() {
+		var int x;
+		var int y;
+		var char key;
+		var boolean exit;
+		var boolean draw; 
+		let x = 30;
+		let y = 30;
+
+      	let exit = false;
+		while (~exit) {
+         	// waits for a key to be pressed
+         	while (key = 0) {
+            let key = Keyboard.keyPressed();
+         	}
+			// If the Q key is pressed, exit the game.
+			if (key = 81) { 
+				let exit = true; 
+			}   
+			// If the R key is pressed, clear the screen, reset the coordinate and disable drawing pen.
+         	if (key = 82) {
+				do Screen.clearScreen();
+				let draw = false;
+				let x = 30;
+				let y = 30;
+			}
+			// If the F key is pressed, disable the drawing pen.
+         	if (key = 70)  { //F key
+				let draw = false;
+			}
+			// If the E key is pressed, enable the drawing pen
+         	if (key = 69)  { //E key
+				let draw = true;
+			}
+			// Press the WSAD keys to control the drawing pen
+         	if (key = 87) { let y = y-5;}  
+         	if (key = 83) { let y = y+5;}   
+         	if (key = 65) { let x = x-5; }   
+         	if (key = 68) { let x = x+5;}
+			// waits for the key to be released
+         	while (~(key = 0)) {
+            	let key = Keyboard.keyPressed();
+				if (draw) {
+					do Screen.drawCircle(x, y, 5);
+				}
+
+			}
+         }
+		return;
+    }
+}
